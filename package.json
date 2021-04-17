@@ -1,0 +1,33 @@
+{
+  "name": "hoop",
+  "version": "1.0.0",
+  "description": "Hoop is an app where people can keep track of their memories on a map and share delightful love notes with the important people in their life!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js --ignore 'client/'",
+    "client": "npm run serve --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [
+    "memory",
+    "map",
+    "notes"
+  ],
+  "author": "Ritwik Divakaruni",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "joi-password-complexity": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.3",
+    "morgan": "^1.10.0"
+  }
+}
