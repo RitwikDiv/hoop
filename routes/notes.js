@@ -4,6 +4,7 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 const auth = require('../middleware/auth');
 const { Notes, validateNote } = require('../models/note');
+const _ = require('lodash');
 
 // Initializing router
 const router = express.Router();
@@ -35,7 +36,7 @@ router.post('/', auth, async (req, res) => {
 		const { error } = validateNote(_.pick(req.body, ['desc']));
 		if (error) return res.status(400).send(error.details[0].message);
 
-		const note = new Note({
+		const note = new Notes({
 			desc: req.body.desc,
 			author: mongoose.Types.ObjectId(req.user._id),
 		});
@@ -43,6 +44,7 @@ router.post('/', auth, async (req, res) => {
 
 		res.send(note);
 	} catch (err) {
+		console.log(err);
 		res.status(500).send('Internal server error');
 	}
 });
