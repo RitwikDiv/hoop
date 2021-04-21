@@ -1,7 +1,7 @@
 <template>
 	<div class="h-screen flex">
 		<AppNavbar />
-		<div class="flex-1 bg-grey-lightest mt-5 flex overflow-hidden">
+		<div class="flex-1 bg-white mt-5 flex overflow-hidden">
 			<div class="flex-1 overflow-y-scroll">
 				<h1>Notes</h1>
 				<h1>asdfasdfasdf</h1>

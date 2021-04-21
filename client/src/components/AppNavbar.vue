@@ -1,13 +1,43 @@
 <template>
-	<div class="bg-grey-lighter md:w-48 flex flex-col">
-		<h1
-			class="sm:text-xl md:text-4xl font-extrabold text-center mt-5 title text-grey-darkest"
-		>
-			Hoop
-		</h1>
-		<router-link to="/notes" class="p-5">Notes</router-link>
-		<router-link to="/memories">Memories</router-link>
-		<router-link to="/login">Sign Out</router-link>
+	<div class="bg-grey-lightest md:w-36 flex flex-col justify-center">
+		<router-link to="/user" class="px-3">
+			<button
+				class="text-indigo-darker text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+			>
+				<font-awesome-icon
+					:icon="['fas', 'user']"
+					class="text-xl hover:text-white"
+				/>
+			</button>
+		</router-link>
+		<router-link to="/create" class="mt-10 px-3">
+			<button
+				class="text-green-dark text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+			>
+				<font-awesome-icon :icon="['fas', 'plus-square']" class="text-xl" />
+			</button>
+		</router-link>
+		<router-link to="/notes" class="mt-10 px-3">
+			<button
+				class="text-orange text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+			>
+				<font-awesome-icon :icon="['fas', 'layer-group']" class="text-xl" />
+			</button>
+		</router-link>
+		<router-link to="/memories" class="mt-10 px-3">
+			<button
+				class="text-blue text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+			>
+				<font-awesome-icon :icon="['fas', 'globe-asia']" class="text-xl" />
+			</button>
+		</router-link>
+		<router-link to="/login" class="mt-10 px-3">
+			<button
+				class="text-indigo-darker text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+			>
+				<font-awesome-icon :icon="['fas', 'sign-out-alt']" class="text-xl" />
+			</button>
+		</router-link>
 	</div>
 </template>
 
@@ -24,8 +54,5 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 .title {
 	font-family: 'Lobster', cursive;
-}
-hr {
-	width: 30%;
 }
 </style>
