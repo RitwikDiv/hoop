@@ -36,6 +36,7 @@
 				</div>
 			</div>
 			<button
+				@click="loginSuccess()"
 				class="mt-5 px-4 py-2 text-center rounded-lg hover:bg-grey-darkest hover:text-white bg-white text-grey-darkest border-2 border-grey-darkest"
 			>
 				<span class="font-bold">
@@ -61,6 +62,11 @@ export default {
 				password: '',
 			},
 		};
+	},
+	methods: {
+		loginSuccess() {
+			this.$router.push('/memories');
+		},
 	},
 };
 </script>
