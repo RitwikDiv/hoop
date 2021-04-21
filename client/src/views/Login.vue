@@ -46,7 +46,7 @@
 		</form>
 		<p class="mt-5 text-md text-center font-semibold text-grey-darkest">
 			Don't have an account?
-			<router-link to="/register" class="underline no">Sign up</router-link>
+			<router-link to="/register" class="ml-2 underline">Sign up</router-link>
 		</p>
 		<br />
 	</div>

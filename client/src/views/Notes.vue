@@ -1,7 +1,50 @@
 <template>
-	<div>
+	<div class="h-screen flex">
 		<AppNavbar />
-		<h1>Notes Page</h1>
+		<div class="flex-1 bg-grey-lightest mt-5 flex overflow-hidden">
+			<div class="flex-1 overflow-y-scroll">
+				<h1>Notes</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+			</div>
+		</div>
 	</div>
 </template>
 

@@ -1,7 +1,50 @@
 <template>
-	<div>
+	<div class="h-screen flex">
 		<AppNavbar />
-		<h1>Memories Page</h1>
+		<div class="flex-1 bg-grey-lightest flex overflow-hidden">
+			<div class="flex-1 overflow-y-scroll">
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+				<h1>asdfasdfasdf</h1>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -15,10 +58,4 @@ export default {
 };
 </script>
 
-<style>
-#map {
-	height: 650px;
-	width: 500px;
-	border-radius: 5px;
-}
-</style>
+<style scoped></style>

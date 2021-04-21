@@ -61,7 +61,7 @@
 		</form>
 		<p class="mt-5 text-md text-center font-semibold text-grey-darkest">
 			Have an account?
-			<router-link to="/login" class="underline">Login</router-link>
+			<router-link to="/login" class="ml-2 underline">Login</router-link>
 		</p>
 	</div>
 </template>
