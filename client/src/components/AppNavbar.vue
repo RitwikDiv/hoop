@@ -1,8 +1,8 @@
 <template>
-	<div class="bg-grey-lightest md:w-36 flex flex-col justify-center">
+	<div class="md:w-36 flex flex-col justify-center">
 		<router-link to="/user" class="px-3">
 			<button
-				class="text-indigo-darker text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+				class="text-indigo-darker text-md px-2 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg hover:shadow-md"
 			>
 				<font-awesome-icon
 					:icon="['fas', 'user']"
@@ -10,30 +10,23 @@
 				/>
 			</button>
 		</router-link>
-		<router-link to="/create" class="mt-10 px-3">
-			<button
-				class="text-green-dark text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
-			>
-				<font-awesome-icon :icon="['fas', 'plus-square']" class="text-xl" />
-			</button>
-		</router-link>
 		<router-link to="/notes" class="mt-10 px-3">
 			<button
-				class="text-orange text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+				class="text-indigo-darker text-md px-2 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg hover:shadow-md"
 			>
 				<font-awesome-icon :icon="['fas', 'layer-group']" class="text-xl" />
 			</button>
 		</router-link>
 		<router-link to="/memories" class="mt-10 px-3">
 			<button
-				class="text-blue text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+				class="text-indigo-darker text-md px-2 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg hover:shadow-md"
 			>
 				<font-awesome-icon :icon="['fas', 'globe-asia']" class="text-xl" />
 			</button>
 		</router-link>
 		<router-link to="/login" class="mt-10 px-3">
 			<button
-				class="text-indigo-darker text-md px-4 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg"
+				class="text-indigo-darker text-md px-2 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg hover:shadow-md"
 			>
 				<font-awesome-icon :icon="['fas', 'sign-out-alt']" class="text-xl" />
 			</button>

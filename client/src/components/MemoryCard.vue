@@ -1,8 +1,5 @@
 <template>
-	<div
-		class="shadow-sm bg-grey-lightest p-3 rounded-lg mb-2 mt-2"
-		v-bind:id="id"
-	>
+	<div class="p-3 bg-grey-lightest rounded-lg mb-4 mt-2 shadow" v-bind:id="id">
 		<p class="mt-2 text-xl font-extrabold">
 			{{ title }}
 		</p>
@@ -21,7 +18,7 @@
 					@click="toggleEditing()"
 					class="mr-3 focus:outline-none p-1 rounded-lg hover:bg-indigo-darkest hover:text-grey-lightest"
 				>
-					<font-awesome-icon :icon="['fas', 'pen']" class="text-md" />
+					<font-awesome-icon :icon="['fas', 'trash']" class="text-md" />
 				</button>
 			</div>
 		</div>
