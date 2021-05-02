@@ -475,6 +475,7 @@ module.exports = {
 		'1/2': '50%',
 		'1/3': '33.33333%',
 		'2/3': '66.66667%',
+		'0.3': '30.0%',
 		'1/4': '25%',
 		'3/4': '75%',
 		'1/5': '20%',
@@ -885,6 +886,7 @@ module.exports = {
 		whitespace: ['responsive'],
 		width: ['responsive'],
 		zIndex: ['responsive'],
+		gradientColorStops: ['active', 'group-hover'],
 	},
 
 	/*

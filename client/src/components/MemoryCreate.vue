@@ -4,7 +4,7 @@
 			<p class="font-bold text-md mb-5 text-xl">Create a memory</p>
 			<input
 				type="text"
-				class="font-bold text-md p-3 mb-2 border-2"
+				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
 				id="memory-title"
 				v-model="memory.title"
 				placeholder="Enter the memory title"
@@ -12,7 +12,7 @@
 			/>
 			<input
 				type="date"
-				class="font-bold text-md p-3 mb-2 border-2"
+				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
 				v-model="memory.date"
 				id="memory-date"
 				placeholder="mm/dd/yyyy"
@@ -20,14 +20,14 @@
 			/>
 			<input
 				type="text"
-				class="font-bold text-md p-3 mb-2 border-2"
+				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
 				id="memory-location"
 				v-model="memory.place_name"
 				placeholder="Enter the memory location"
 				required
 			/>
 			<textarea
-				class="font-bold text-md p-3 mb-2 border-2"
+				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
 				id="memory-desc"
 				rows="3"
 				v-model="memory.desc"
@@ -36,7 +36,7 @@
 			/>
 			<button
 				type="button"
-				class="mt-2 p-3 text-indigo-darkest border-2 border-indigo-darkest hover:bg-indigo-darkest hover:text-grey-lightest"
+				class="mt-2 p-3 rounded-lg text-indigo-darkest border-2 border-indigo-darkest hover:bg-indigo-darkest hover:text-grey-lightest"
 				@click="handleSubmitMemory"
 			>
 				<strong>Share your memory</strong>
