@@ -16,7 +16,7 @@
 			<div class="options align-middle">
 				<button
 					@click="toggleEditing()"
-					class="mr-3 focus:outline-none p-1 rounded-lg hover:bg-indigo-darkest hover:text-grey-lightest"
+					class="mr-3 focus:outline-none p-2 rounded-lg hover:bg-indigo-darkest hover:text-grey-lightest"
 				>
 					<font-awesome-icon :icon="['fas', 'trash']" class="text-md" />
 				</button>

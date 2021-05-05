@@ -1,35 +1,29 @@
 <template>
-	<button :class="getRandomColor()">
-		<p class="text-center font-medium p-2">
-			{{ content }}
-		</p>
+	<button
+		class="p-3 w-full bg-grey-lightest rounded-lg mb-5 shadow flex flex-row focus:outline-none"
+	>
+		<div class="w-0.9">
+			<p class="text-md font-medium tracking-normal leading-loose text-center">
+				{{ content }}
+			</p>
+		</div>
+		<div class="w-0.1">
+			<button
+				@click="toggleEditing()"
+				class="focus:outline-none p-2 rounded-lg hover:bg-indigo-darkest hover:text-grey-lightest"
+			>
+				<font-awesome-icon :icon="['fas', 'trash']" class="text-md" />
+			</button>
+		</div>
 	</button>
 </template>
 
 <script>
 export default {
 	name: 'LoveNote',
-	props: ['content'],
+	props: ['content', 'date_string'],
 	data() {
-		return {
-			baseBackgroundClass: 'rounded-lg h-48 w-0.3 m-5 p-2 ',
-			colorSelection: [
-				'bg-green-lightest',
-				'bg-yellow-lightest',
-				'bg-red-lightest',
-				'bg-blue-lightest',
-				'bg-pink-lightest',
-			],
-		};
-	},
-	methods: {
-		getRandomColor() {
-			const randomElement = this.colorSelection[
-				Math.floor(Math.random() * this.colorSelection.length)
-			];
-			console.log(this.getRandomColor);
-			return this.baseBackgroundClass + randomElement;
-		},
+		return {};
 	},
 };
 </script>
