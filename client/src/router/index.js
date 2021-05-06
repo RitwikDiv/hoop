@@ -3,6 +3,7 @@ import Memories from '../views/Memories.vue';
 import Notes from '../views/Notes.vue';
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
+import Home from '../views/Home.vue';
 
 const routes = [
 	{
@@ -28,6 +29,11 @@ const routes = [
 		path: '/notes',
 		name: 'Notes',
 		component: Notes,
+	},
+	{
+		path: '/home',
+		name: 'Home',
+		components: Home,
 	},
 ];
 

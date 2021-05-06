@@ -1,11 +1,11 @@
 <template>
 	<div class="md:w-36 flex flex-col justify-center">
-		<router-link to="/user" class="px-3">
+		<router-link to="/home" class="px-3">
 			<button
 				class="text-indigo-darker text-md px-2 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg hover:shadow-md"
 			>
 				<font-awesome-icon
-					:icon="['fas', 'user']"
+					:icon="['fas', 'home']"
 					class="text-xl hover:text-white"
 				/>
 			</button>
