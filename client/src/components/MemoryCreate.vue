@@ -1,7 +1,7 @@
 <template>
 	<div id="memory_create p-2 mb-5">
 		<form class="p-2 flex flex-col justify-between">
-			<p class="font-bold text-md mb-5 text-xl">Create a memory</p>
+			<p class="font-bold mb-5 text-2xl">Create a memory</p>
 			<input
 				type="text"
 				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
