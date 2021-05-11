@@ -2,17 +2,16 @@
 	<div class="h-screen flex">
 		<AppNavbar />
 		<div class="p-2 ml-10 flex flex-col w-full m-auto">
-			<div class="flex flex-row justify-center mt-10 mb-10">
+			<div class="flex flex-row justify-center mb-10">
 				<div class="w-1/2 m-auto">
 					<p class="text-left text-4xl font-extrabold font-serif">
 						Welcome to Hoop Boop!
 					</p>
 					<p class="font-medium text-md leading-loose text-left mt-5">
 						As life goes on and we make millions of memories, it is hard to lose
-						track of the ones that matter. This project aims to helps recollect
-						the most cherished moments and affirmations you have received
-						through your lifetime. Go out there and make some wonderful
-						memories!
+						track of the ones that matter. This app hopes to helps recollect the
+						most cherished moments and affirmations you have received through
+						your lifetime. Go out there and make some wonderful memories!
 					</p>
 				</div>
 				<div class="w-1/2">

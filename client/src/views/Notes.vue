@@ -10,8 +10,8 @@
 			<button @click="create_note = false" v-if="create_note" class="mb-3">
 				<font-awesome-icon :icon="['fas', 'minus']" class="text-lg" />
 			</button>
-			<div class="flex flex-row justify-center">
-				<form class="w-1/2 flex flex-col mr-10" v-if="create_note">
+			<div class="flex flex-row justify-around">
+				<form class="w-1/2 flex flex-col mr-10 mb-3" v-if="create_note">
 					<p class="font-bold text-left mb-3 text-2xl">
 						Create a note
 					</p>
@@ -34,14 +34,6 @@
 						class="mb-2 mt-2 w-full"
 					></div>
 				</form>
-				<div class="w-1/2 ml-10">
-					<img
-						:src="images.notes"
-						v-if="create_note"
-						class="h-1/3 w-1/3"
-						alt="Love Notes"
-					/>
-				</div>
 			</div>
 			<div class="h-px bg-grey-light mb-4"></div>
 			<div class="ml-10 flex flex-row flex-wrap">
