@@ -47,27 +47,27 @@ router.post('/', auth, async (req, res) => {
 		if (error) return res.status(400).send(error.details[0].message);
 
 		const locationString = encodeURIComponent(req.body.place_name);
-		const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${locationString}.json?types=${req.body.type}&limit=1&access_token=${process.env.MAPBOX_API_KEY}`;
-		await axios
+		const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${locationString}.json?limit=1&access_token=${process.env.MAPBOX_API_KEY}`;
+		console.log(geocodeUrl);
+		axios
 			.get(geocodeUrl)
-			.then((axiosResponse) => {
+			.then(async (axiosResponse) => {
 				place_name = axiosResponse.data.features[0].text;
 				loc.coordinates = axiosResponse.data.features[0].center;
+				const memory = new Memory({
+					title: req.body.title,
+					desc: req.body.desc,
+					place_name: place_name,
+					loc: loc,
+					author: mongoose.Types.ObjectId(req.user._id),
+					date: date,
+				});
+				await memory.save();
+				res.send(memory);
 			})
-			.catch((error) => {
+			.catch(() => {
 				res.status(500).send('Internal error when creating the memory');
 			});
-
-		const memory = new Memory({
-			title: req.body.title,
-			desc: req.body.desc,
-			place_name: place_name,
-			loc: loc,
-			author: mongoose.Types.ObjectId(req.user._id),
-			date: date,
-		});
-		await memory.save();
-		res.send(memory);
 	} catch (err) {
 		res.status(500).send('Internal Server Error');
 	}
