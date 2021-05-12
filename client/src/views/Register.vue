@@ -30,7 +30,7 @@
 			</div>
 			<div class="text-md mb-3">
 				<input
-					type="password1"
+					type="password"
 					name="password1"
 					id="password1"
 					placeholder="Enter a password"
@@ -41,7 +41,7 @@
 			</div>
 			<div class="text-md mb-3">
 				<input
-					type="password2"
+					type="password"
 					name="password2"
 					id="password2"
 					placeholder="Confirm your password"
@@ -50,8 +50,13 @@
 					v-model="info.confirmPassword"
 				/>
 			</div>
+			<div class="mt-2" v-if="invalid">
+				<p class="font-semibold text-red">
+					Please check your input!
+				</p>
+			</div>
 			<button
-				@click="loginSuccess()"
+				@click.prevent="loginSuccess()"
 				class="mt-5 px-4 py-2 text-center rounded-lg hover:bg-grey-darkest hover:text-white bg-white text-grey-darkest border-2 border-grey-darkest"
 			>
 				<span class="font-bold">
@@ -67,10 +72,12 @@
 </template>
 
 <script>
+const axios = require('axios');
 export default {
 	name: 'Register',
 	data() {
 		return {
+			invalid: null,
 			info: {
 				name: '',
 				email: '',
@@ -81,7 +88,20 @@ export default {
 	},
 	methods: {
 		loginSuccess() {
-			this.$router.push('/memories');
+			if (this.info.password != this.info.confirmPassword) {
+				this.invalid = true;
+				return;
+			}
+			let apiURL = 'api/users';
+			axios
+				.post(apiURL, this.info, {
+					'content-type': 'text/json',
+				})
+				.then((res) => {
+					this.$store.commit('set_jwt', res.data);
+					this.$router.push('/home');
+				})
+				.catch(() => (this.invalid = true));
 		},
 	},
 };

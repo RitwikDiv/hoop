@@ -27,16 +27,21 @@
 					autocomplete="off"
 					v-model="info.password"
 				/>
-				<div class="flex justify-end text-sm mt-3">
+				<!-- <div class="flex justify-end text-sm mt-3">
 					<a
 						href="#"
 						class="no-underline font-semibold hidden text-grey-darkest"
 						>Forgot Password?</a
 					>
-				</div>
+				</div> -->
+			</div>
+			<div class="mt-5" v-if="invalid">
+				<p class="text-red font-bold">
+					Invalid credentials provided!
+				</p>
 			</div>
 			<button
-				@click="loginSuccess()"
+				@click.prevent="loginSuccess()"
 				class="mt-5 px-4 py-2 text-center rounded-lg hover:bg-grey-darkest hover:text-white bg-white text-grey-darkest border-2 border-grey-darkest"
 			>
 				<span class="font-bold">
@@ -53,10 +58,12 @@
 </template>
 
 <script>
+const axios = require('axios');
 export default {
 	name: 'Login',
 	data() {
 		return {
+			invalid: null,
 			info: {
 				email: '',
 				password: '',
@@ -65,7 +72,16 @@ export default {
 	},
 	methods: {
 		loginSuccess() {
-			this.$router.push('/memories');
+			let apiURL = 'api/auth';
+			axios
+				.post(apiURL, this.info, {
+					'content-type': 'text/json',
+				})
+				.then((res) => {
+					this.$store.commit('set_jwt', res.data);
+					this.$router.push('/home');
+				})
+				.catch(() => (this.invalid = true));
 		},
 	},
 };
