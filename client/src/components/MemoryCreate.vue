@@ -47,6 +47,7 @@
 </template>
 
 <script>
+const axios = require('axios');
 export default {
 	name: 'MemoryCreate',
 	data() {
@@ -61,21 +62,34 @@ export default {
 		};
 	},
 	methods: {
-		async handleSubmitMemory() {
+		handleSubmitMemory() {
 			var formValidation = this.checkFormData();
 			if (!formValidation) return;
 			else {
-				this.memory = {
-					title: '',
-					desc: '',
-					place_name: '',
-					date: '',
-				};
-				this.post_status = true;
+				let apiURL = 'api/memories';
+				axios
+					.post(apiURL, this.memory, {
+						headers: {
+							'Content-Type': 'application/json',
+							'x-auth-token': localStorage.jwtToken,
+						},
+					})
+					.then(() => {
+						this.memory = {
+							title: '',
+							desc: '',
+							place_name: '',
+							date: '',
+						};
+						this.post_status = true;
+					})
+					.catch((err) => {
+						this.post_status = false;
+						console.log(err);
+					});
 			}
 		},
 		checkFormData() {
-			console.log('Check form data invoked');
 			if (
 				this.memory.title.length === 0 ||
 				this.memory.desc.length === 0 ||
@@ -83,6 +97,7 @@ export default {
 				this.memory.place_name.length === 0
 			) {
 				this.post_status = false;
+				console.log('Invalid Form');
 				return false;
 			} else return true;
 		},
