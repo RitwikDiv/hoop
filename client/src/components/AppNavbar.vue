@@ -24,21 +24,25 @@
 				<font-awesome-icon :icon="['fas', 'globe-asia']" class="text-xl" />
 			</button>
 		</router-link>
-		<router-link to="/login" class="mt-10 px-3">
+		<div class="mt-10 px-3">
 			<button
 				class="text-indigo-darker text-md px-2 py-2 hover:bg-indigo-darkest hover:text-grey-lightest rounded-lg hover:shadow-md"
+				@click="applyLogout()"
 			>
 				<font-awesome-icon :icon="['fas', 'sign-out-alt']" class="text-xl" />
 			</button>
-		</router-link>
+		</div>
 	</div>
 </template>
 
 <script>
 export default {
 	name: 'AppNavbar',
-	data() {
-		return {};
+	methods: {
+		applyLogout() {
+			this.$store.commit('remove_jwt');
+			this.$router.push('/login');
+		},
 	},
 };
 </script>
