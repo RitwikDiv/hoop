@@ -1,21 +1,31 @@
 <template>
-	<button :class="getRandomColor">
-		<div class="w-0.9">
+	<button :class="getRandomColor" v-if="!deleted">
+		<div class="w-0.9 flex flex-col">
 			<p
 				class="text-md p-2 font-medium tracking-normal leading-loose text-center"
 			>
 				{{ content }}
 			</p>
+			<div class="text-right">
+				<button
+					@click.prevent="handleDelete()"
+					class="focus:outline-none p-2 rounded-lg hover:bg-indigo-darkest hover:text-grey-lightest"
+				>
+					<font-awesome-icon :icon="['fas', 'trash']" class="text-md" />
+				</button>
+			</div>
 		</div>
 	</button>
 </template>
 
 <script>
+const axios = require('axios');
 export default {
 	name: 'LoveNote',
-	props: ['content', 'date_string'],
+	props: ['id', 'content', 'date_string'],
 	data() {
 		return {
+			deleted: false,
 			colorSelection: [
 				'bg-green-lightest',
 				'bg-yellow-lightest',
@@ -26,30 +36,21 @@ export default {
 		};
 	},
 	methods: {
-		async handleSubmitMemory() {
-			var formValidation = this.checkFormData();
-			if (!formValidation) return;
-			else {
-				this.memory = {
-					title: '',
-					desc: '',
-					place_name: '',
-					date: '',
-				};
-				this.post_status = true;
+		handleDelete() {
+			if (confirm('Do you really want to delete?')) {
+				let apiURL = `api/notes/${this.id}`;
+				axios
+					.delete(apiURL, {
+						headers: {
+							'Content-Type': 'application/json',
+							'x-auth-token': localStorage.jwtToken,
+						},
+					})
+					.then(() => (this.deleted = true))
+					.catch((err) => {
+						console.log(err);
+					});
 			}
-		},
-		checkFormData() {
-			console.log('Check form data invoked');
-			if (
-				this.memory.title.length === 0 ||
-				this.memory.desc.length === 0 ||
-				this.memory.date.length === 0 ||
-				this.memory.place_name.length === 0
-			) {
-				this.post_status = false;
-				return false;
-			} else return true;
 		},
 	},
 	computed: {
@@ -59,7 +60,7 @@ export default {
 			];
 			console.log(this.getRandomColor);
 			return (
-				'p-2 w-0.3 bg-grey-lightest rounded-lg m-3 shadow ' + randomElement
+				'p-1 w-0.3 bg-grey-lightest rounded-lg m-3 shadow ' + randomElement
 			);
 		},
 	},
