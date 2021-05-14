@@ -11,8 +11,8 @@ const Notes = mongoose.model(
 			type: String,
 			required: true,
 			trim: true,
-			minLength: 10,
-			maxLength: 400,
+			minLength: 5,
+			maxLength: 200,
 		},
 		author: {
 			type: mongoose.Schema.Types.ObjectId,
@@ -28,7 +28,7 @@ const Notes = mongoose.model(
 // Create a joi validation schema function
 function validateNote(note) {
 	const schema = Joi.object({
-		desc: Joi.string().min(10).max(400).required(),
+		desc: Joi.string().min(5).max(200).required(),
 	});
 	return schema.validate(note);
 }

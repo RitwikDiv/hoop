@@ -33,7 +33,7 @@ router.get('/:id', auth, async (req, res) => {
 
 router.post('/', auth, async (req, res) => {
 	try {
-		const { error } = validateNote(_.pick(req.body, ['desc']));
+		const { error } = validateNote(req.body);
 		if (error) return res.status(400).send(error.details[0].message);
 
 		const note = new Notes({
@@ -41,7 +41,6 @@ router.post('/', auth, async (req, res) => {
 			author: mongoose.Types.ObjectId(req.user._id),
 		});
 		await note.save();
-
 		res.send(note);
 	} catch (err) {
 		console.log(err);
