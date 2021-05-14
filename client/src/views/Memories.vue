@@ -20,6 +20,16 @@
 				</button>
 				<MemoryCreate v-if="create_memory" />
 				<div class="h-px bg-grey-light mb-4"></div>
+				<div class="missing" v-if="memories.length == 0">
+					<p class="p-4 text-lg font-bold font-serif">
+						You don't have any memories to view. Create new memories by clicking
+						the
+						<span class="ml-2 mr-2 text-center"
+							><font-awesome-icon :icon="['fas', 'plus']" class="text-lg"
+						/></span>
+						button above!
+					</p>
+				</div>
 				<div v-for="memory in memories" :key="memory._id">
 					<MemoryCard
 						:id="memory._id"
@@ -66,6 +76,7 @@ export default {
 		}, 1000);
 	},
 	created() {
+		if (localStorage.jwtToken === undefined) this.$router.push('/login');
 		let apiURL = 'api/memories';
 		axios
 			.get(apiURL, { headers: { 'x-auth-token': localStorage.jwtToken } })

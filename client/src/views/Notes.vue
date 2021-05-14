@@ -11,12 +11,12 @@
 				<font-awesome-icon :icon="['fas', 'minus']" class="text-lg" />
 			</button>
 			<div class="flex flex-row justify-around">
-				<form class="w-1/2 flex flex-col mr-10 mb-3" v-if="create_note">
+				<form class="w-1/2 flex flex-col mr-10 mb-4" v-if="create_note">
 					<p class="font-bold text-left mb-3 text-2xl">
 						Create a note
 					</p>
 					<textarea
-						class="p-2 mb-3 font-bold text-md border-2 rounded-lg"
+						class="p-2 mb-3 text-md border-2 rounded-lg"
 						placeholder="Save compliments, messages and other love notes you have gotten over time!"
 						rows="3"
 						required
@@ -39,7 +39,8 @@
 			<div class="ml-10 flex flex-row flex-wrap">
 				<LoveNote
 					v-for="note in notes"
-					:key="note.id"
+					:key="note._id"
+					:id="note._id"
 					:content="note.desc"
 					:date_string="note.date_string"
 				/>
@@ -51,25 +52,54 @@
 <script>
 import AppNavbar from '../components/AppNavbar.vue';
 import LoveNote from '../components/LoveNote.vue';
+
+const axios = require('axios');
+
 export default {
 	name: 'Notes',
 	components: { AppNavbar, LoveNote },
 	methods: {
-		async handleSubmitNote() {
+		handleSubmitNote() {
 			var formValidation = this.checkFormData();
 			if (!formValidation) return;
 			else {
-				this.note_desc = '';
-				this.post_status = true;
+				let apiURL = 'api/notes';
+				var data = {
+					desc: this.note_desc,
+				};
+				axios
+					.post(apiURL, data, {
+						headers: {
+							'Content-Type': 'application/json',
+							'x-auth-token': localStorage.jwtToken,
+						},
+					})
+					.then(() => {
+						this.note_desc = '';
+						this.post_status = true;
+					})
+					.catch((err) => {
+						this.post_status = false;
+						console.log(err);
+					});
 			}
 		},
 		checkFormData() {
-			console.log('Check form data invoked');
 			if (this.note_desc === '') {
 				this.post_status = false;
 				return false;
 			} else return true;
 		},
+	},
+	created() {
+		if (localStorage.jwtToken === undefined) this.$router.push('/login');
+		let apiURL = 'api/notes';
+		axios
+			.get(apiURL, { headers: { 'x-auth-token': localStorage.jwtToken } })
+			.then((res) => {
+				this.notes = res.data;
+			})
+			.catch((err) => console.log(err.message));
 	},
 	computed: {
 		postAlert() {
@@ -94,67 +124,7 @@ export default {
 			note_desc: '',
 			create_note: false,
 			post_status: null,
-			images: {
-				notes: require('../assets/img/lovenotes.png'),
-			},
-			notes: [
-				{
-					id: 1,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure. Thank you for always making time for me and reassuring me when I am insecure.',
-					date_string: 'Jan 19th, 2021',
-				},
-				{
-					id: 2,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 3,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 4,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 5,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 3,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 4,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 5,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 3,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 4,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-				{
-					id: 5,
-					desc:
-						'Thank you for always making time for me and reassuring me when I am insecure.',
-				},
-			],
+			notes: [],
 		};
 	},
 };
