@@ -12,9 +12,10 @@
 					name="name"
 					id="name"
 					placeholder="Enter your name"
-					class="w-full px-4 py-4 rounded-lg border-2"
+					class="w-full px-4 py-4 rounded border-2"
 					autocomplete="off"
 					v-model="info.name"
+					disabled
 				/>
 			</div>
 			<div class="text-md mb-3">
@@ -23,9 +24,10 @@
 					name="username"
 					id="username"
 					placeholder="Enter your email"
-					class="w-full px-4 py-4 rounded-lg border-2"
+					class="w-full px-4 py-4 rounded border-2"
 					autocomplete="off"
 					v-model="info.email"
+					disabled
 				/>
 			</div>
 			<div class="text-md mb-3">
@@ -34,9 +36,10 @@
 					name="password1"
 					id="password1"
 					placeholder="Enter a password"
-					class="w-full px-4 py-4 rounded-lg border-2"
+					class="w-full px-4 py-4 rounded border-2"
 					autocomplete="off"
 					v-model="info.password"
+					disabled
 				/>
 			</div>
 			<div class="text-md mb-3">
@@ -45,19 +48,26 @@
 					name="password2"
 					id="password2"
 					placeholder="Confirm your password"
-					class="w-full px-4 py-4 rounded-lg border-2"
+					class="w-full px-4 py-4 rounded border-2"
 					autocomplete="off"
 					v-model="info.confirmPassword"
+					disabled
 				/>
 			</div>
-			<div class="mt-2" v-if="invalid">
+			<div class="mt-2 mb-3" v-if="invalid">
 				<p class="font-semibold text-red">
 					Please check your input!
 				</p>
 			</div>
+			<div class="p-3 bg-grey-darker rounded">
+				<p class="font-semibold text-white">
+					Currently in alpha! You can create an account only through an invite.
+				</p>
+			</div>
 			<button
+				disabled
 				@click.prevent="loginSuccess()"
-				class="mt-5 px-4 py-2 text-center rounded-lg hover:bg-grey-darkest hover:text-white bg-white text-grey-darkest border-2 border-grey-darkest"
+				class="mt-3 px-4 py-2 text-center rounded hover:bg-grey-darkest hover:text-white bg-white text-grey-darkest border-2 border-grey-darkest"
 			>
 				<span class="font-bold">
 					Create an account

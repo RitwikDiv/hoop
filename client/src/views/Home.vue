@@ -4,10 +4,10 @@
 		<div class="p-2 ml-10 flex flex-col w-full m-auto">
 			<div class="flex flex-row justify-center mb-10">
 				<div class="w-1/2 m-auto">
-					<p class="text-left text-5xl font-extrabold font-serif">
+					<p class="text-left text-3xl font-extrabold font-serif">
 						Welcome to Hoop Boop!
 					</p>
-					<p class="font-medium text-lg leading-loose text-left mt-5">
+					<p class="font-medium text-md leading-loose text-left mt-5">
 						As life goes on and we make millions of memories, it is hard to lose
 						track of the ones that matter. This app hopes to help you recollect
 						the most cherished moments and affirmations you have received
@@ -31,10 +31,10 @@
 							:icon="['fas', 'globe-asia']"
 							class="text-xl mr-5"
 						/>
-						<p class="font-bold text-xl">Cherish your memories!</p>
+						<p class="font-bold text-lg">Cherish your memories!</p>
 					</div>
 					<div class="mt-3 ml-2">
-						<p class="font-medium leading-loose text-left text-lg p-2">
+						<p class="font-medium leading-loose text-left text-md p-2">
 							Click on the globe icon in the menu to save your precious memories
 							and their locations on the map! Don't be afraid to reach out and
 							ask people to hang out!
@@ -47,10 +47,10 @@
 							:icon="['fas', 'layer-group']"
 							class="text-xl mr-5"
 						/>
-						<p class="font-bold text-xl">Save your notes!</p>
+						<p class="font-bold text-lg">Save your notes!</p>
 					</div>
 					<div class="mt-3 ml-2">
-						<p class="font-medium leading-loose text-left text-lg p-2">
+						<p class="font-medium leading-loose text-left text-md p-2">
 							Click on the notes icon in the menu to save all the wonderful
 							messages, and compliments you have recieved! Don't forget to
 							compliment wonderful people in your life!

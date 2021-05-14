@@ -36,6 +36,24 @@
 				</form>
 			</div>
 			<div class="h-px bg-grey-light mb-4"></div>
+			<div
+				class="missing w-full flex flex-row justify-between bg-grey-lightest text-center mb-4"
+			>
+				<img
+					:src="images.intro"
+					class="m-auto h-1/6 w-1/6"
+					alt="Creating memory"
+				/>
+				<p class="m-auto text-lg font-bold leading-loose">
+					You have {{ notes.length }} notes to view. Create new notes by
+					clicking the
+					<span class="ml-2 mr-2 text-center"
+						><font-awesome-icon :icon="['fas', 'plus']" class="text-lg"
+					/></span>
+					button above!
+				</p>
+			</div>
+			<div class="h-px bg-grey-light mb-4"></div>
 			<div class="ml-10 flex flex-row flex-wrap">
 				<LoveNote
 					v-for="note in notes"
@@ -125,6 +143,9 @@ export default {
 			create_note: false,
 			post_status: null,
 			notes: [],
+			images: {
+				intro: require('../assets/img/happy.png'),
+			},
 		};
 	},
 };

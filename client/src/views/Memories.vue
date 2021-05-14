@@ -2,8 +2,8 @@
 	<div class="h-screen flex">
 		<AppNavbar />
 		<div class="md:w-2/5 h-0.95 mt-5 mb-5 mr-5 " id="map"></div>
-		<div class="flex-1 ml-5 flex m-5 mr-5">
-			<div class="flex-1 text-left m-3 overflow-auto">
+		<div class="flex-1 flex m-2 mr-5">
+			<div class="flex-1 text-left overflow-auto">
 				<button
 					@click="create_memory = true"
 					v-if="!create_memory"
@@ -20,16 +20,22 @@
 				</button>
 				<MemoryCreate v-if="create_memory" />
 				<div class="h-px bg-grey-light mb-4"></div>
-				<div class="missing" v-if="memories.length == 0">
-					<p class="p-4 text-lg font-bold font-serif">
-						You don't have any memories to view. Create new memories by clicking
-						the
+				<div class="missing m-auto flex flex-row w-full mb-4 bg-grey-lightest">
+					<img
+						:src="images.intro"
+						class="m-auto h-1/3 w-1/3"
+						alt="Creating memory"
+					/>
+					<p class="m-auto text-lg font-bold leading-loose">
+						You have {{ memories.length }} memories to view. Create new memories
+						by clicking the
 						<span class="ml-2 mr-2 text-center"
 							><font-awesome-icon :icon="['fas', 'plus']" class="text-lg"
 						/></span>
 						button above!
 					</p>
 				</div>
+				<div class="h-px bg-grey-light mb-4"></div>
 				<div v-for="memory in memories" :key="memory._id">
 					<MemoryCard
 						:id="memory._id"
@@ -67,6 +73,9 @@ export default {
 			apiKey: process.env.VUE_APP_MAPBOX_API_KEY,
 			create_memory: false,
 			memories: [],
+			images: {
+				intro: require('../assets/img/computer.png'),
+			},
 		};
 	},
 	mounted() {
