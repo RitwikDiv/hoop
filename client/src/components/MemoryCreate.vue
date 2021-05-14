@@ -4,34 +4,38 @@
 			<p class="font-bold mb-5 text-2xl">Create a memory</p>
 			<input
 				type="text"
-				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
+				class="text-md p-3 mb-2 border-2 rounded-lg"
 				id="memory-title"
 				v-model="memory.title"
 				placeholder="Enter the memory title"
+				autocomplete="off"
 				required
 			/>
 			<input
 				type="date"
-				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
+				class="text-md p-3 mb-2 border-2 rounded-lg"
 				v-model="memory.date"
 				id="memory-date"
 				placeholder="mm/dd/yyyy"
+				autocomplete="off"
 				required
 			/>
 			<input
 				type="text"
-				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
+				class="text-md p-3 mb-2 border-2 rounded-lg"
 				id="memory-location"
 				v-model="memory.place_name"
 				placeholder="Enter the memory location"
+				autocomplete="off"
 				required
 			/>
 			<textarea
-				class="font-bold text-md p-3 mb-2 border-2 rounded-lg"
+				class="text-md p-3 mb-2 border-2 rounded-lg"
 				id="memory-desc"
 				rows="3"
 				v-model="memory.desc"
 				placeholder="Enter the memory description"
+				autocomplete="off"
 				required
 			/>
 			<button
