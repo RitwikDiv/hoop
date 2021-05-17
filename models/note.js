@@ -28,7 +28,7 @@ const Notes = mongoose.model(
 // Create a joi validation schema function
 function validateNote(note) {
 	const schema = Joi.object({
-		desc: Joi.string().min(5).max(200).required(),
+		desc: Joi.string().min(5).max(500).required(),
 	});
 	return schema.validate(note);
 }

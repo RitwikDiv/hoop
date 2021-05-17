@@ -54,7 +54,7 @@ const Memory = mongoose.model(
 function validateMemory(memory) {
 	const schema = Joi.object({
 		title: Joi.string().min(2).max(50).required(),
-		desc: Joi.string().min(10).max(400).required(),
+		desc: Joi.string().min(10).max(500).required(),
 		place_name: Joi.string().min(1).max(50).required(),
 		date: Joi.string().required(),
 	});
