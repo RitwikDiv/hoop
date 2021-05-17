@@ -12,7 +12,7 @@ const Notes = mongoose.model(
 			required: true,
 			trim: true,
 			minLength: 5,
-			maxLength: 200,
+			maxLength: 500,
 		},
 		author: {
 			type: mongoose.Schema.Types.ObjectId,

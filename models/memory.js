@@ -17,7 +17,7 @@ const Memory = mongoose.model(
 			type: String,
 			required: true,
 			minLength: 10,
-			maxLength: 400,
+			maxLength: 500,
 		},
 		place_name: {
 			type: String,
