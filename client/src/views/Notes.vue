@@ -127,7 +127,7 @@ export default {
 				return `
                 <div class="p-2 bg-green-lighter font-bold text-center rounded-lg mb-3">
                     <font-awesome-icon :icon="['fas', 'check-circle']" class="text-md" />
-                    <span class="ml-4">Thank you for sharing your lovely note!</span>
+                    <span class="ml-4">Thank you for sharing your lovely note! Double click to delete a note. </span>
                 </div>`;
 			} else
 				return `

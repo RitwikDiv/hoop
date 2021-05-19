@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="h-px bg-grey-light mr-20"></div>
-			<div class="flex flex-row sm:flex-wrap justify-around mt-10">
+			<div class="flex flex-row sm:flex-wrap justify-around mt-5">
 				<div class="w-1/3 shadow p-2 bg-green-lightest rounded-lg">
 					<div class="flex flex-row justify-start p-2 mt-5 ml-2">
 						<font-awesome-icon
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="h-px bg-grey-light mr-20 mt-10"></div>
+			<div class="h-px bg-grey-light mr-20 mt-5"></div>
 		</div>
 	</div>
 </template>

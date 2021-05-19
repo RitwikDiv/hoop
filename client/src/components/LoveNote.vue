@@ -1,20 +1,12 @@
 <template>
-	<button :class="getRandomColor" v-if="!deleted">
-		<div class="flex flex-col">
-			<p
-				class="text-md p-2 font-medium tracking-normal leading-loose text-center"
-			>
-				{{ content }}
-			</p>
-			<div class="text-right mb-1">
-				<button
-					@click.prevent="handleDelete()"
-					class="focus:outline-none p-2 rounded-lg hover:bg-indigo-darkest hover:text-grey-lightest"
-				>
-					<font-awesome-icon :icon="['fas', 'trash']" class="text-md" />
-				</button>
-			</div>
-		</div>
+	<button
+		:class="getRandomColor"
+		v-if="!deleted"
+		v-on:dblclick="(counter += 1), handleDelete()"
+	>
+		<p class="p-2 font-medium tracking-normal leading-loose text-center">
+			{{ content }}
+		</p>
 	</button>
 </template>
 
@@ -25,6 +17,7 @@ export default {
 	props: ['id', 'content', 'date_string'],
 	data() {
 		return {
+			counter: 0,
 			deleted: false,
 			colorSelection: [
 				'bg-green-lightest',
@@ -59,9 +52,7 @@ export default {
 				Math.floor(Math.random() * this.colorSelection.length)
 			];
 			console.log(this.getRandomColor);
-			return (
-				'p-1 w-0.3 bg-grey-lightest rounded-lg m-3 shadow ' + randomElement
-			);
+			return 'p-2 w-0.3 rounded-lg m-2 ' + randomElement;
 		},
 	},
 };
