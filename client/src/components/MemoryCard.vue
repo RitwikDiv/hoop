@@ -1,10 +1,10 @@
 <template>
 	<div
-		class="p-3 bg-grey-lightest rounded-lg mb-4 mt-2 shadow"
+		class="p-3 rounded-lg mb-4 mt-2m bg-grey-lightest"
 		v-bind:id="id"
 		v-if="!deleted"
 	>
-		<p class="p-2 text-xl font-extrabold">
+		<p class="p-2 text-xl font-extrabold text-indigo-darker">
 			{{ title }}
 		</p>
 		<p class="p-2 text-md font-medium tracking-normal leading-loose">
@@ -13,9 +13,11 @@
 		<div class="ml-2 flex flex-row flex-wrap align-middle justify-between">
 			<div class="meta align-middle">
 				<p class="text-sm font-bold p-2">
-					<span class="date">{{ new Date(date_string).toDateString() }}</span>
+					<span class="date text-blue-dark">{{
+						new Date(date_string).toDateString()
+					}}</span>
 					●
-					<span class="ml-1 location">{{ place_name }}</span>
+					<span class="ml-1 location text-orange-dark">{{ place_name }}</span>
 				</p>
 			</div>
 			<div class="options align-middle">

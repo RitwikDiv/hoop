@@ -20,7 +20,10 @@
 				</button>
 				<MemoryCreate v-if="create_memory" />
 				<div class="h-px bg-grey-light mb-4"></div>
-				<div class="missing m-auto flex flex-row w-full mb-4 bg-grey-lightest">
+				<div
+					class="missing m-auto flex flex-row w-full mb-4 bg-grey-lightest"
+					v-if="memories.length === 0"
+				>
 					<img
 						:src="images.intro"
 						class="m-auto h-1/3 w-1/3"
@@ -35,7 +38,7 @@
 						button above!
 					</p>
 				</div>
-				<div class="h-px bg-grey-light mb-4"></div>
+				<div class="h-px bg-grey-light mb-4" v-if="memories.length === 0"></div>
 				<div v-for="memory in memories" :key="memory._id">
 					<MemoryCard
 						:id="memory._id"

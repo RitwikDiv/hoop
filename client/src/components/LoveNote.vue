@@ -1,12 +1,12 @@
 <template>
 	<button :class="getRandomColor" v-if="!deleted">
-		<div class="w-0.9 flex flex-col">
+		<div class="flex flex-col">
 			<p
 				class="text-md p-2 font-medium tracking-normal leading-loose text-center"
 			>
 				{{ content }}
 			</p>
-			<div class="text-right">
+			<div class="text-right mb-1">
 				<button
 					@click.prevent="handleDelete()"
 					class="focus:outline-none p-2 rounded-lg hover:bg-indigo-darkest hover:text-grey-lightest"

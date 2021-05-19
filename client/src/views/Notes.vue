@@ -38,6 +38,7 @@
 			<div class="h-px bg-grey-light mb-4"></div>
 			<div
 				class="missing w-full flex flex-row justify-between bg-grey-lightest text-center mb-4"
+				v-if="notes.length === 0"
 			>
 				<img
 					:src="images.intro"
@@ -53,7 +54,7 @@
 					button above!
 				</p>
 			</div>
-			<div class="h-px bg-grey-light mb-4"></div>
+			<div class="h-px bg-grey-light mb-4" v-if="notes.length === 0"></div>
 			<div class="ml-10 flex flex-row flex-wrap">
 				<LoveNote
 					v-for="note in notes"
