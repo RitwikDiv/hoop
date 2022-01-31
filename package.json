@@ -19,7 +19,7 @@
   "author": "Ritwik Divakaruni",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "bcrypt": "^5.0.1",
     "concurrently": "^6.0.2",
     "cors": "^2.8.5",
